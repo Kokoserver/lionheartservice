@@ -1,1 +1,1 @@
-web: uvicorn lionheart:app --workers 4
+web: gunicorn -k uvicorn.workers.UvicornWorker

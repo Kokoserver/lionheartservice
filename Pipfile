@@ -10,6 +10,7 @@ starlette = {extras = ["full"], version = "*"}
 motor = "*"
 jinja2 = "*"
 uvicorn = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.8"
