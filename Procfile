@@ -1,1 +1,1 @@
-web: uvicorn run server
+web: uvicorn lionheart:app --workers 4
