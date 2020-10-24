@@ -1,0 +1,12 @@
+<div id="alert">
+    {% if status == "success"%}
+ <div class="alert-success">
+    <p> <b>{{status}}: </b>{{message}}</p>
+</div>
+{%elif status == "error"%}
+ <div class="alert-danger">
+    <p>{{message}}</p>
+</div>
+{%endif%}
+</div>
+

@@ -1,0 +1,107 @@
+.contact{
+    width: 100vw;
+    background-color: #eee;
+    margin-top: 6rem;
+    padding: 4rem 0rem;
+    &__form{
+        padding: 5rem;
+        width: 50%;
+        margin: 2rem auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0  0 1rem rgba($tertiary, .3);
+        
+        
+    }
+
+    &__input{
+        display: block;
+        padding: 1.5rem 1rem;
+        width: 100%;
+        outline: none;
+        border: none;
+        font-size: 1.2rem;
+        border-bottom:.2rem solid transparent;
+
+       
+        &:not(:last-child){
+            margin-bottom: 1rem;
+        }
+
+        &:not(:last-child), &:valid{
+            border-bottom: .2rem solid green;
+        }
+        &:placeholder-shown{
+            border-bottom: .2rem solid $primary-color;
+        }
+
+        
+
+    }
+
+    #select{
+        display: block;
+        padding: 1.5rem 2rem;
+        width: 100%;
+        outline: none;
+        border: none;
+        font-size: 1.2rem;
+        border-bottom:.2rem solid transparent;
+    }
+    &__btn{
+        width: 100%;
+       border: none;
+       border: .2rem solid transparent;
+       &:hover{
+           border: .2rem solid $primary-color;
+           background-color: transparent;
+           color: $primary-color;
+       }
+       
+
+    }
+}
+#alert{
+ display: block;
+ transition: all 5s;
+.alert-success{
+    display: flex;
+    justify-content: center;
+    width:  100%;
+    margin: 2rem auto;
+    position: fixed;
+    top: 3rem;
+    z-index: 9999;
+    background-color: rgba(green, .8);
+    padding: 0 2rem;
+    color: $white;
+    text-align: center;
+   
+}
+
+
+
+
+
+
+.alert-danger{
+    display: flex;
+    justify-content: center;
+    width:  100%;
+    margin: 2rem auto;
+    position: fixed;
+    top: 3rem;
+    z-index: 9999;
+    background-color: rgba(red, .8777);
+    padding: 0 2rem;
+    color: $white;
+    text-align: center;
+}
+}
+
+.fadeout{
+    transition: display .5s ease-out;
+    display: none !important;
+  }

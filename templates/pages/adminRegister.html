@@ -1,0 +1,14 @@
+{% extends "base.html"%}
+{% block content%}
+{%include "pages/alert.html"%}
+<section class="contact">
+    <div >
+       <h1 class="service__title h1">register admin</h1>
+       <form action="/admin/register/main/raqueeb" method="post" autocomplete="off" class="contact__form">
+          <input type="email" placeholder="Enter your email" name="email" value="{{email}}" class="contact__input" required>
+          <input type="password" placeholder="Enter your password" name="password" value="{{password}}" class="contact__input" required>   
+          <button type="submit" class="btn contact__btn">create</button>
+       </form>
+    </div>
+ </section>
+{%endblock%}

@@ -1,0 +1,194 @@
+#header{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    
+
+    .nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 5rem;
+        padding: 0 5rem;
+        background-color: $primary-color;
+        box-shadow: 0 0 2rem #1a1c2094;
+        z-index: 100;
+
+        &__brand{
+            font-size: 2rem;
+            font-weight: bold;
+            color: $white;
+            text-transform: uppercase;
+        }
+
+        &__menu{
+            @media screen and (max-width:765px) and (max-width:798px){
+                position: fixed;
+                top: 5rem;
+                right: 0;
+                background-color:$primary-color;
+                height: 100%; 
+                transform: translateX(100%);
+                width: 40%;
+                align-self: center;
+                z-index: 100;
+                transition: transform .5s ease-in;
+                
+            }
+
+            
+        }
+        .show{
+            transition: transform .5s ease-out;
+            transform: translateX(0);
+            
+        }
+       
+
+        &__list{
+            display: flex;
+            list-style: none;
+            justify-content: space-around;
+            @media screen and (max-width:765px) {
+                flex-direction: column;
+                align-items: center;  
+            } 
+        }
+
+        &__item{
+            padding: 2rem;
+        }
+
+        &__link{
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            color: $white;
+            text-align: left;
+            
+            
+        }
+
+        &__toggler{
+           display: none;
+           font-size: 2rem;
+           color: $white;
+           @media screen and (max-width:765px) {
+               display: block;
+               
+           }
+        }
+    }
+}
+
+.status{
+    width: 100%;
+    padding-top: 6rem;
+    text-align: center;
+    font-size: 1.5rem;
+    a:active, a:visited{
+        color: $primary-color;
+    }
+}
+
+.footer{
+    width: 100vw;
+    background-color: $white;
+    text-align: center;
+    background-color: $tertiary;
+    
+
+    &__box{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 2rem ;
+        
+
+        
+        
+    }
+
+    i{
+        font-size: 3rem;
+    }
+
+    &__social{
+        list-style: none;
+        
+        li{
+                // padding:.4rem;
+                width: 2rem;
+                height: auto;
+                align-items: center;
+
+            // &:hover{
+            //     background-color: $secondary-color;
+            //     border-radius: 100%;
+            // }
+            display: inline-block;
+        }
+
+        a:active, a:visited, a:link{
+           color: $white;
+           outline: none;
+           text-decoration: none;
+        }
+    }
+
+    &__header{
+        font-size: 1.3rem;
+        color: $primary-color;
+        text-align: center;
+        
+    }
+
+  
+    &__contact{
+        text-align: center;
+       
+      
+        p{
+            color: $secondary-color;
+            padding-right: 1rem;
+            margin-right: 1rem;
+            text-align: center;
+            text-transform: capitalize;
+            &:not(:last-child){
+                border-right: .2rem solid $primary-color;
+            }
+        }
+
+        b{
+            color: $white;
+            
+        }
+
+    }
+
+    &__detail{
+        display: flex;
+        justify-content: center;
+
+    }
+
+    a{
+        color: $white;
+        text-transform: capitalize;
+    }
+
+    
+
+    &__copyright{
+        padding-bottom:3rem;
+        font-size: 1.3rem;
+        color: $white;
+        
+        b{
+            color: $secondary-color;
+            font-weight: 300;
+
+        }
+
+        
+    }
+}

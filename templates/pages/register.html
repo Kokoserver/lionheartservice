@@ -1,0 +1,20 @@
+{% extends "base.html"%}
+{% block content%}
+{%include "pages/alert.html"%}
+<section class="contact">
+    <div >
+       <h1 class="service__title h1">register with us</h1>
+       <form action="/register" method="post" autocomplete="off" class="contact__form">
+       <select name="category" id="select" class="contact__input contact__select" required>
+          {% for category in categories %}
+           <option value="{{category}}">{{category}}</option>
+           {%endfor%}
+       </select>
+          <input type="text" placeholder="Enter your firstname" name="firstname" class="contact__input" value="{{firstname}}" autocomplete="off" required>
+          <input type="text" placeholder="Enter your lastname" name="lastname" value="{{lastname}}" class="contact__input" required>
+          <input type="email" placeholder="Enter your email" name="email" value="{{email}}" class="contact__input" required>
+          <button type="submit" class="btn contact__btn">register</button>
+       </form>
+    </div>
+ </section>
+{%endblock%}

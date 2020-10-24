@@ -1,0 +1,246 @@
+.display{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.562), rgb(8, 8, 8)), url(../../static/image/tyler-franta-iusJ25iYu1c-unsplash.jpg);
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  @media screen and (max-width:765px) and (max-width:600px) {
+      min-height: 70vh;
+  }
+
+    &__text{
+        text-align: center;
+        align-self: center;
+        font-family: Arial;
+        a{
+            background-color: $primary-color;
+            font-size: 1.6rem;
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            color: $white;
+            @media screen  and (max-width:765px){
+                font-size: 1.2rem;
+            }
+
+          
+        }
+        
+    }
+    &__text-header{
+        text-transform: uppercase;
+        font-weight: 400;
+        padding: 2rem;
+        color: $white;
+        font-size: 3rem;
+        @media screen and  (max-width:765px){
+            font-size: 1.5rem;
+            
+        }
+        span{
+            font-size: 2rem;
+            @media screen and  (max-width:765px){
+                font-size: 1.1rem;
+                
+            }
+        }
+        
+        
+    }
+
+   
+
+    
+   
+    
+}
+
+.about{
+    min-height:50vh ;
+    width: 100vw;
+    background: #eee ;
+    background-attachment: fixed;
+    background-position: center left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0rem;
+   
+
+
+    &__box{
+        align-content: center;
+        text-align: center;
+        width: 50%;
+        padding: 2rem 0rem;
+        @media screen and (max-width:765px)  {
+            width: 90%;
+        }
+    }
+
+    &__header{
+        font-weight: 500;
+        text-transform: uppercase;
+        text-align: center;
+        padding-bottom: 0;
+        color:$primary-color;
+        font-size: 1.5rem;
+        @media screen and  (max-width:765px){
+            font-size: 1.5rem;
+            
+        }
+    }
+
+    .btn{
+        padding: 1rem 2rem;
+        background-color: $primary-color;
+        color: $white;
+        font-size: 1.5rem;
+        margin: 2rem 0rem;
+        
+    }
+
+    &__text{
+        font-size: 1.4rem;
+        text-align: left;
+        padding: 1rem;
+        text-align: center;
+        font-size: 1.3rem;
+        @media screen and (max-width:765px) {
+            font-size: 1rem;
+        }
+    }
+}
+
+.table{
+    width: 90vw;
+    margin: 4rem auto;
+    padding: 2rem 4rem 2rem 0rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    @media screen and (max-width:765px){
+        width:70vw;
+        margin: 2rem auto;
+        overflow-x: scroll;
+        overflow-y: scroll;
+
+    }
+    h2{
+        text-align: center;
+    }
+
+    button{
+        background-color: red;
+        border: none;
+        padding: .4rem 1rem;
+        color: $white;
+    }
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        margin-top: 5rem;
+        margin-bottom: 3rem;
+        width: 100%;
+        
+      }
+      
+      td, th {
+        border: .1rem solid #dddddd;
+        text-align: left;
+        padding: .8rem;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      } 
+}
+
+#service{
+    display: inline-block;
+    text-align: center;
+    max-width: 100vw;
+    padding: 2rem 0rem;
+    
+}
+.service{
+    display: flex;
+    justify-content: space-around;
+    min-height: 10rem;
+    // padding: 4rem 0rem;
+    @media screen  and (max-width:765px){
+        
+        
+    }
+
+    @media screen and (max-width:798px) and (max-width:765px){
+        flex-direction: column;
+    }
+    
+    
+ &__title{
+     font-weight: 400;
+     text-align: center;
+     padding: 1.5rem;
+     color:$primary-color;
+     font-size: 1.5rem;
+     @media screen and  (max-width:765px){
+         font-size: 1.5rem;
+         
+     }
+
+ }
+
+ &__img{
+     height: 12rem;
+     width: 20rem;
+     object-fit: cover;
+     
+ }
+
+ &__box{
+     
+     transition: all .2s;
+     padding: 2rem;
+     @media screen  and (max-width:765px){
+        margin-bottom: 3rem;
+        
+        
+    }
+    box-shadow: 0 .5rem 1rem rgba($tertiary, .1);
+    
+    //  &:hover{
+    //     box-shadow: 0 .5rem 1rem rgba($tertiary, .1);
+    //  }
+     &:not(:last-child){
+         margin-right: 1rem;
+     }
+ }
+ &__header{
+     font-weight: 400;
+     font-size: 1.5rem;
+     @media screen and (max-width:765px) {
+         font-size: 1.3rem;
+     }
+ }
+ &__content{
+     text-align: center;
+     padding: .5rem 2rem;
+     font-size: 1.3rem;
+        @media screen and (max-width:765px) {
+            font-size: 1rem;
+        }
+ }
+
+ &__btn{
+     padding-top: 1rem;
+ }
+    
+
+}
+
+
+
+

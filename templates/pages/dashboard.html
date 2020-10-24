@@ -1,0 +1,39 @@
+{% extends "base.html"%}
+{% block content%}
+{%include "pages/alert.html"%}
+<div class="status">
+    <span>Welcome admin</span>
+<a href="admin/logout">logout</a>
+</div>
+
+
+
+
+
+<div class="table">
+    <h2 class="h2">Registered user</h2>
+    <table>
+  <tr>
+    <th>firstname</th>
+    <th>lastname</th>
+    <th>email</th>
+    <th>category</th>
+    <th></th>
+  </tr>
+{% for user in user%}
+<tr>
+    <td>{{user.firstname}}</td>
+    <td>{{user.lastname}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.category}}</td>
+    <td>
+        <form action="/deleteUser" method="post">
+        <input type="hidden" name="userId" value="{{user._id}}">
+        <button type="submit">Delete</button>
+    </form>
+</td>
+  </tr>
+ {%endfor%}  
+</table>
+{%endblock%}
+</div>

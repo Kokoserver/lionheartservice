@@ -1,0 +1,85 @@
+{%extends "base.html"%}
+{%block content%}
+{%include "pages/alert.html"%}
+   <section class="display" id="home">
+      <div class="display__text">
+         <h1 class="display__text-header h1">
+            welcome to lionheart <br> <span>we care, we serve </span>
+         </h1>
+         <a href="/register" class="display__link">Register Now</a>
+      </div>
+   </section>
+   <section class="about" id="about">
+  <div class="about__box">
+   <h1 class="about__header h1">
+      Some facts about Us
+   </h1>
+ <div class="about__text">
+   
+   <p>Lionheart services is a platform for  different kinds of services. 
+      Employ And Apply for Jobs, Register for, Sporting Activities,  online 
+   </p>
+   <p>
+      jobs, Lionheart team , sell on Lionheart. We are Lions  
+      will go the   extra mile to make you happy  , we care ,  we serve.
+
+</p>
+ </div>
+ <!-- <a href="#contact" class="btn">contact us</a> -->
+  </div>
+   </section>
+
+   <section id="service">
+      <h1 class="service__title h1">Our services</h1>
+      <div class="service">
+      <div class="service__box">
+         <img src="../../static/image/andrej-lisakov-V2OyJtFqEtY-unsplash.jpg" alt="" srcset="" class="service__img">
+           <h3 class="service__header h2">Sport Academy</h3>
+           <p class="service__content">
+            Be The Best Version  Of Yourself. Engage  Yourself in a physical exercise that will help you master yourself.
+            Learn martial arts  Taekwondo and kickboxing  .
+            Self decipline, self esteem, self love, self mastery,  and courage are one of the things you and  your kids will take away from martial arts
+           </p>
+      </div>
+      <div class="service__box">
+         <img src="../../static/image/headway-5QgIuuBxKwM-unsplash.jpg" alt="" srcset="" class="service__img">
+         <h3 class="service__header h2">Job Empowerment</h3>
+         <p class="service__content">
+            Are you in need of a  qualified and a competent staff 
+We are specialized in   connecting Employee to   competent staffs .
+Alll kinds of staffs are available on Lionheart services .
+Employ, Teachers, Part Time teachers, Sport instructor,
+Taekwondo instructor, Company staffs, Factory Staffs, Receptionist,Secretary
+         </p>
+    </div>
+    <div class="service__box">
+      <img src="../../static/image/joanna-kosinska-1_CMoFsPfso-unsplash.jpg" alt="" srcset="" class="service__img">
+      <h3 class="service__header h2">Sellers Registeration</h3>
+      <p class="service__content">
+         Connect with a wide range of customers ,
+ Expand Your Business,
+Relax and be taking care of. Sell differently , Take a giant step and take your business to the next level.
+ Sell your products on Lionheart Empire .  
+How We Sell 
+We sell different  products on different E-commerce sites and social media platforms.
+      </p>
+ </div>
+ 
+</div>
+
+
+<!-- <a href="#contact" class="btn">contact us</a> -->
+   </section>
+
+   <section id="contact" class="contact">
+      <div >
+         <h1 class="service__title h1">Contact Us</h1>
+         <form action="/contact" method="post" autocomplete="off" class="contact__form">
+            <input type="text" placeholder="Enter your name" name="name" class="contact__input" autocomplete="off" required>
+            <input type="email" placeholder="Enter your email" name="email" class="contact__input" required>
+            <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter your messaage" class="contact__input"></textarea>
+            <button type="submit" class="btn contact__btn">message</button>
+         </form>
+      </div>
+   </section>
+{%endblock%}

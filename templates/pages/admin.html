@@ -1,0 +1,14 @@
+{%extends "base.html"%}
+{%block content%}
+{%include "pages/alert.html"%}
+<section class="contact">
+    <div >
+       <h1 class="service__title h1">admin Login</h1>
+       <form action="/admin/login" method="post" autocomplete="off" class="contact__form">
+          <input type="email" placeholder="Enter your email" name="email" value="{{email}}"class="contact__input" required>
+          <input type="password" placeholder="Enter your password" name="password" min="7" value="{{password}}" class="contact__input" required>
+          <button type="submit" class="btn contact__btn">send</button>
+       </form>
+    </div>
+ </section>
+{%endblock%}
