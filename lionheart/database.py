@@ -9,7 +9,7 @@ class Database(object):
     @staticmethod
     def inittailize():
        __client = MongoClient(DATABASE_URL)
-       Database.DATABASE =  __client['lionheart']
+       Database.DATABASE =  __client
 
     @staticmethod
     def find(collection:str, data:dict):
