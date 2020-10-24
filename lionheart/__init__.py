@@ -14,7 +14,7 @@ import lionheart.settings
 
 middleware = [
     Middleware(SessionMiddleware, secret_key=settings.SECRET_KEY),
-    Middleware(TrustedHostMiddleware, allowed_hosts=settings.ALLOWED_HOSTS)
+    # Middleware(TrustedHostMiddleware, allowed_hosts=settings.ALLOWED_HOSTS)
 ]
 routes = [
     Route("/", home),
