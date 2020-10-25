@@ -1,12 +1,11 @@
-import smtplib
 from starlette.requests import Request
 from starlette.responses import PlainTextResponse, HTMLResponse, RedirectResponse
 from starlette.background import BackgroundTask
-from config import template
+from .config import template
 from .model import LionheartUser as User
 from .model import LionheartContact as Contact
 from .model import LionheartAdmin as Admin
-from config import sendmail
+from .config import sendmail
 
 CATEGORY:list = [
     "Category",
