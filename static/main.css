@@ -242,8 +242,9 @@ a {
 
 #header .nav__toggler {
   display: none;
-  font-size: 2rem;
+  font-size: 5rem;
   color: #f4f4f4;
+  padding-bottom: 2rem;
 }
 
 @media screen and (max-width: 765px) {

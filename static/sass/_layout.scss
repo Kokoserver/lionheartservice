@@ -69,9 +69,11 @@
         }
 
         &__toggler{
-           display: none;
-           font-size: 2rem;
-           color: $white;
+            display: none;
+            font-size: 5rem;
+            color: $white;
+            padding-bottom: 2rem;
+
            @media screen and (max-width:765px) {
                display: block;
                
