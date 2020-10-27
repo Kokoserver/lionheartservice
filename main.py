@@ -105,7 +105,7 @@ async def dashboard(request:Request):
     user = request.session.get('loginlionheart', None)
     if user is not None:
         return template("pages/dashboard.html", { "request":request, "user":User.all({})})
-    return RedirectResponse(url="/admin", status_code=301)
+    return RedirectResponse(url="/admin")
         
 
 
