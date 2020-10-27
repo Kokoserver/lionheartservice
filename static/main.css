@@ -61,6 +61,13 @@ a {
   box-shadow: 0 0 1rem rgba(26, 28, 32, 0.3);
 }
 
+@media screen and (max-width: 765px) {
+  .contact__form {
+    width: 70%;
+    padding: 2rem;
+  }
+}
+
 .contact__input {
   display: block;
   padding: 1.5rem 1rem;
