@@ -7,7 +7,6 @@ verify_ssl = true
 
 [packages]
 starlette = {extras = ["full"], version = "*"}
-motor = "*"
 jinja2 = "*"
 uvicorn = "*"
 gunicorn = "*"
