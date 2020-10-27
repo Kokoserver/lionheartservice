@@ -90,15 +90,15 @@ async def adminReg(request:Request):
     "password":password, "status":"error", "message":"account already exist"})
      
 
-# async def adminRegTemplate(request:Request):
-#     return template("pages/adminRegister.html", {"request":request})  
+async def adminRegTemplate(request:Request):
+    return template("pages/adminRegister.html", {"request":request})  
 
-# async def delete(request:Request):
-#     form = await request.form()
-#     userId = form.get("userId")
-#     user = User.delete({"_id":userId})
-#     return RedirectResponse(url="/dashboard", status_code=301)
-#     return template("pages/admin.html", {"request":request})  
+async def delete(request:Request):
+    form = await request.form()
+    userId = form.get("userId")
+    user = User.delete({"_id":userId})
+    return RedirectResponse(url="/dashboard", status_code=301)
+    return template("pages/admin.html", {"request":request})  
    
 
 async def dashboard(request:Request):
