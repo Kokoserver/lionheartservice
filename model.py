@@ -1,4 +1,4 @@
-from .database import Database
+from database import Database
 from uuid import uuid4
 
 def getData(DataObject):

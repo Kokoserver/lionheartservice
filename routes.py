@@ -1,6 +1,6 @@
 
 from starlette.routing import Route
-from .main import (registerTemplate, 
+from main import (registerTemplate, 
 register, contact, adminTemplate, 
 dashboard, 
 logout,

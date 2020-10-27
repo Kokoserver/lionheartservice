@@ -4,9 +4,9 @@ from starlette.staticfiles import StaticFiles
 from starlette.middleware import Middleware
 from starlette.middleware.sessions import SessionMiddleware
 from starlette.middleware.trustedhost import TrustedHostMiddleware
-from lionheart.routes import routes
-from lionheart.main import home
-from lionheart import settings
+import settings
+from main import home
+from routes import routes
 
 
 middleware = [

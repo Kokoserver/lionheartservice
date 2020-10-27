@@ -1,6 +1,6 @@
+import pymongo
 from pymongo import MongoClient
-from starlette.config import Config
-from .settings import DATABASE_URL
+import settings
 
 
 class Database(object):
@@ -8,8 +8,10 @@ class Database(object):
 
     @staticmethod
     def inittailize():
-       __client = MongoClient(DATABASE_URL)
-       Database.DATABASE =  __client
+        __client = pymongo.MongoClient(settings.DATABASE_URL)
+        Database.DATABASE = __client.lionheartdb
+
+     
 
     @staticmethod
     def find(collection:str, data:dict):

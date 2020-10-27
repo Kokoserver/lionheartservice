@@ -12,6 +12,7 @@ jinja2 = "*"
 uvicorn = "*"
 gunicorn = "*"
 aiohttp = "*"
+pymongo = {extras = ["srv"], version = "*"}
 
 [requires]
 python_version = "3.8"
