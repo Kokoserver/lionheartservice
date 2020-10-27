@@ -64,7 +64,7 @@ async def admin(request:Request):
     user = Admin.find(email=email, password=password)
     if user:
        request.session['loginlionheart'] = user["_id"]
-       return template("pages/dashboard.html", { "request":request, "status":"success", "message":"you are login", "user":User.all({})})
+       return RedirectResponse("/dashboard", status_code=301)
     return template("pages/admin.html", {"request":request, "email":email, 
     "password":password,"status":"error", "message":"account does not exist"}) 
     
