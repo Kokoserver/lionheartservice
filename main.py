@@ -85,20 +85,20 @@ async def adminReg(request:Request):
        user = Admin(email=email, password=password)
        user.save()
        return template("pages/admin.html", { "request":request, "status":"success", 
-       "message":"you have successfully register"})
+       "message":"you have successfully register, Please login below"})
     return template("pages/adminRegister.html", { "request":request, "email":email, 
     "password":password, "status":"error", "message":"account already exist"})
      
 
-async def adminRegTemplate(request:Request):
-    return template("pages/adminRegister.html", {"request":request})  
+# async def adminRegTemplate(request:Request):
+#     return template("pages/adminRegister.html", {"request":request})  
 
-async def delete(request:Request):
-    form = await request.form()
-    userId = form.get("userId")
-    user = User.delete({"_id":userId})
-    return RedirectResponse(url="/dashboard", status_code=301)
-    return template("pages/admin.html", {"request":request})  
+# async def delete(request:Request):
+#     form = await request.form()
+#     userId = form.get("userId")
+#     user = User.delete({"_id":userId})
+#     return RedirectResponse(url="/dashboard", status_code=301)
+#     return template("pages/admin.html", {"request":request})  
    
 
 async def dashboard(request:Request):
@@ -106,7 +106,7 @@ async def dashboard(request:Request):
     if user is not None:
         return template("pages/dashboard.html", { "request":request, "status":"success",
         "message":"you have successfully login", "user":User.all({})})
-    return RedirectResponse(url="/admin", status_code=303)
+    return RedirectResponse(url="/admin", status_code=301)
         
 
 
