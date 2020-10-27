@@ -65,7 +65,7 @@ async def admin(request:Request):
     password = form.get("password")
     user = Admin.find(email=email, password=password)
     if user:
-       request.session['login'] = user["_id"]
+       request.session['loginlionheart'] = user["_id"]
        return RedirectResponse("/dashboard", status_code=303)
     return template("pages/admin.html", {"request":request, "email":email, 
     "password":password,"status":"error", "message":"account does not exist"}) 
@@ -102,7 +102,7 @@ async def delete(request:Request):
    
 
 async def dashboard(request:Request):
-    user = request.session.get('login', None)
+    user = request.session.get('loginlionheart', None)
     if user is not None:
         return template("pages/dashboard.html", { "request":request, "user":User.all({})})
     return RedirectResponse(url="/admin", status_code=303)
