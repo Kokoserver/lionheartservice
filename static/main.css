@@ -258,6 +258,7 @@ a {
   #header .nav__toggler {
     display: block;
     padding-bottom: 1rem;
+    font-size: 6rem;
   }
 }
 
