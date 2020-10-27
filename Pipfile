@@ -9,9 +9,9 @@ verify_ssl = true
 starlette = {extras = ["full"], version = "*"}
 jinja2 = "*"
 uvicorn = "*"
-gunicorn = "*"
 aiohttp = "*"
 pymongo = {extras = ["srv"], version = "*"}
+gunicorn = "*"
 
 [requires]
 python_version = "3.8"
