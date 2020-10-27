@@ -54,8 +54,6 @@ async def register(request:Request):
     return RedirectResponse(url="/homeresponse/23478638726", status_code=301)
 
 async def adminTemplate(request:Request):
-    if request.session.get('login', None):
-        return RedirectResponse(url="/dashboard", status_code=301)
     return template("pages/admin.html", {"request":request})
 
 
@@ -66,7 +64,7 @@ async def admin(request:Request):
     user = Admin.find(email=email, password=password)
     if user:
        request.session['loginlionheart'] = user["_id"]
-       return RedirectResponse("/dashboard", status_code=301)
+       return template("pages/dashboard.html", { "request":request, "status":"success", "message":"you are login", "user":User.all({})})
     return template("pages/admin.html", {"request":request, "email":email, 
     "password":password,"status":"error", "message":"account does not exist"}) 
     
