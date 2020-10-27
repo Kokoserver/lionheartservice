@@ -51,11 +51,11 @@ async def register(request:Request):
     new_user.save()
     username = f"{firstname} {lastname}"
     BackgroundTask(sendmail, email=email, username=username, category=category)
-    return RedirectResponse(url="/homeresponse/23478638726", status_code=303)
+    return RedirectResponse(url="/homeresponse/23478638726", status_code=307)
 
 async def adminTemplate(request:Request):
     if request.session.get('login', None):
-        return RedirectResponse(url="/dashboard", status_code=301)
+        return RedirectResponse(url="/dashboard", status_code=307)
     return template("pages/admin.html", {"request":request})
 
 
@@ -65,15 +65,15 @@ async def admin(request:Request):
     password = form.get("password")
     user = Admin.find(email=email, password=password)
     if user:
-       request.session['login'] = user
-       return RedirectResponse("/dashboard")
+       request.session['login'] = user["_id"]
+       return RedirectResponse("/dashboard", status_code=307)
     return template("pages/admin.html", {"request":request, "email":email, 
     "password":password,"status":"error", "message":"account does not exist"}) 
     
 
 async def logout(request:Request):
     request.session.clear()
-    return RedirectResponse(url="/")
+    return RedirectResponse(url="/", status_code=307)
     # return template("pages/admin.html", { "request":request, "status":"success",
     #  "message":"you have successfully logged out"})
 
@@ -97,16 +97,15 @@ async def delete(request:Request):
     form = await request.form()
     userId = form.get("userId")
     user = User.delete({"_id":userId})
-    return RedirectResponse(url="/dashboard", status_code=301)
+    return RedirectResponse(url="/dashboard", status_code=307)
     return template("pages/admin.html", {"request":request})  
    
 
 async def dashboard(request:Request):
     user = request.session.get('login', None)
     if user is not None:
-        return template("pages/dashboard.html", { "request":request, "status":"success",
-        "message":"you have successfully login", "user":User.all({})})
-    return RedirectResponse(url="/admin", status_code=301)
+        return template("pages/dashboard.html", { "request":request, "user":User.all({})})
+    return RedirectResponse(url="/admin", status_code=307)
         
 
 
