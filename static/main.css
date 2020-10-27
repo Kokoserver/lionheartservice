@@ -257,6 +257,7 @@ a {
 @media screen and (max-width: 765px) {
   #header .nav__toggler {
     display: block;
+    padding-bottom: 2rem;
   }
 }
 
