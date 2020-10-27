@@ -251,13 +251,13 @@ a {
   display: none;
   font-size: 4rem;
   color: #f4f4f4;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 
 @media screen and (max-width: 765px) {
   #header .nav__toggler {
     display: block;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
   }
 }
 

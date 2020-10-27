@@ -72,11 +72,11 @@
             display: none;
             font-size: 4rem;
             color: $white;
-            padding-bottom: 2rem;
+            padding-bottom: 1rem;
 
            @media screen and (max-width:765px) {
                display: block;
-               padding-bottom: 2rem;
+               padding-bottom: 1rem;
            }
         }
     }
