@@ -196,6 +196,12 @@ a {
   z-index: 100;
 }
 
+@media screen and (max-width: 765px) {
+  #header .nav {
+    padding: 0 2rem;
+  }
+}
+
 #header .nav__brand {
   font-size: 2rem;
   font-weight: bold;
@@ -257,7 +263,7 @@ a {
 @media screen and (max-width: 765px) {
   #header .nav__toggler {
     display: block;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
     font-size: 6rem;
   }
 }
