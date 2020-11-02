@@ -18,6 +18,9 @@
     <th>lastname</th>
     <th>email</th>
     <th>category</th>
+    <th>address</th>
+    <th>phone</th>
+    <th>date</th>
     <th></th>
   </tr>
 {% for user in user%}
@@ -26,6 +29,10 @@
     <td>{{user.lastname}}</td>
     <td>{{user.email}}</td>
     <td>{{user.category}}</td>
+    <td>{{user.address}}</td>
+    <td>{{user.phone}}</td>
+    <td>{{user.date}}</td>
+    
     <td>
         <form action="/deleteUser" method="post">
         <input type="hidden" name="userId" value="{{user._id}}">

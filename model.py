@@ -1,5 +1,6 @@
 from database import Database
 from uuid import uuid4
+import datetime
 
 def getData(DataObject):
     for data in DataObject:
@@ -10,11 +11,14 @@ def getData(DataObject):
 class LionheartUser(object):
     Database.inittailize()
     COLLECTION = "user"
-    def __init__(self, firstname:str, lastname:str, email:str, category:str):
+    def __init__(self, firstname:str, lastname:str, email:str, category:str, phone:str, address:str):
         self.firstname = firstname
         self.lastname = lastname
         self.email = email
         self.category = category
+        self.address = address
+        self.phone = phone
+         
 
     def json(self):
         return {
@@ -23,7 +27,9 @@ class LionheartUser(object):
             "lastname":self.lastname,
             "email":self.email,
             "category":self.category,
-            
+            "address":self.address,
+            "phone":self.phone,
+            "date":datetime.datetime.now()
         }
     
 

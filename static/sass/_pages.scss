@@ -119,7 +119,7 @@
     width: 90vw;
     margin: 4rem auto;
     padding: 2rem 4rem 2rem 0rem;
-    overflow-x: hidden;
+    overflow-x: scroll;
     overflow-y: scroll;
     @media screen and (max-width:765px){
         width:70vw;
@@ -170,10 +170,7 @@
     justify-content: space-around;
     min-height: 10rem;
     // padding: 4rem 0rem;
-    @media screen  and (max-width:765px){
-        
-        
-    }
+   
 
     @media screen and (max-width:798px) and (max-width:765px){
         flex-direction: column;
@@ -204,8 +201,11 @@
      
      transition: all .2s;
      padding: 2rem;
+     width: 33.31%;
      @media screen  and (max-width:765px){
         margin-bottom: 3rem;
+        width: auto;
+        
         
         
     }
@@ -221,17 +221,38 @@
  &__header{
      font-weight: 400;
      font-size: 1.5rem;
+     padding-top: 2rem;
      @media screen and (max-width:765px) {
          font-size: 1.3rem;
      }
  }
  &__content{
      text-align: center;
-     padding: .5rem 2rem;
+    //  padding: .1rem 2rem;
      font-size: 1.3rem;
         @media screen and (max-width:765px) {
             font-size: 1rem;
         }
+ }
+
+ &__list{  
+     list-style-type: circle;
+     display: inline-block;
+     padding-top: 0;
+
+     li{
+         text-align: left;
+         display: inline-block;
+         @media screen and (max-width:765px) {
+            font-size: 1rem;
+        }
+         font-size: 1.1rem;
+         &::after{
+             content: ",";
+             padding-right: .2rem;
+             font-size: 1rem;
+         }
+     }
  }
 
  &__btn{

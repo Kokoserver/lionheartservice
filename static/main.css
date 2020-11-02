@@ -489,7 +489,7 @@ a {
   width: 90vw;
   margin: 4rem auto;
   padding: 2rem 4rem 2rem 0rem;
-  overflow-x: hidden;
+  overflow-x: scroll;
   overflow-y: scroll;
 }
 
@@ -573,12 +573,14 @@ a {
 .service__box {
   transition: all .2s;
   padding: 2rem;
+  width: 33.31%;
   box-shadow: 0 0.5rem 1rem rgba(26, 28, 32, 0.1);
 }
 
 @media screen and (max-width: 765px) {
   .service__box {
     margin-bottom: 3rem;
+    width: auto;
   }
 }
 
@@ -589,6 +591,7 @@ a {
 .service__header {
   font-weight: 400;
   font-size: 1.5rem;
+  padding-top: 2rem;
 }
 
 @media screen and (max-width: 765px) {
@@ -599,7 +602,6 @@ a {
 
 .service__content {
   text-align: center;
-  padding: .5rem 2rem;
   font-size: 1.3rem;
 }
 
@@ -607,6 +609,30 @@ a {
   .service__content {
     font-size: 1rem;
   }
+}
+
+.service__list {
+  list-style-type: circle;
+  display: inline-block;
+  padding-top: 0;
+}
+
+.service__list li {
+  text-align: left;
+  display: inline-block;
+  font-size: 1.1rem;
+}
+
+@media screen and (max-width: 765px) {
+  .service__list li {
+    font-size: 1rem;
+  }
+}
+
+.service__list li::after {
+  content: ",";
+  padding-right: .2rem;
+  font-size: 1rem;
 }
 
 .service__btn {

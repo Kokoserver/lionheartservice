@@ -39,15 +39,18 @@ async def register(request:Request):
     lastname  = form.get("lastname")
     email     = form.get('email')
     category  = form.get('category')
+    address  = form.get("address")
+    phone = form.get("phone")
     if category == "Category":
         return template("pages/register.html", { "request":request, "categories":CATEGORY, 
        "status":"error", "message":"Please specify the appropariate category", 
-       "email":email, "firstname":firstname, "lastname":lastname, "category":category})
+       "email":email, "firstname":firstname, "lastname":lastname, "category":category,"phone":phone, "address":address})
     if User.find({"email":email}):
        return template("pages/register.html", { "request":request, "categories":CATEGORY, 
        "status":"error", "message":"User with this email already exist", 
-       "email":email, "firstname":firstname, "lastname":lastname, "category":category})
-    new_user = User(firstname, lastname, email, category)
+       "email":email, "firstname":firstname, "lastname":lastname, "category":category,
+        "phone":phone, "address":address})
+    new_user = User(firstname, lastname, email, category, phone, address)
     new_user.save()
     username = f"{firstname} {lastname}"
     BackgroundTask(sendmail, email=email, username=username, category=category)
