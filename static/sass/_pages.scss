@@ -236,23 +236,7 @@
  }
 
  &__list{  
-     list-style-type: circle;
-     display: inline-block;
-     padding-top: 0;
-
-     li{
-         text-align: left;
-         display: inline-block;
-         @media screen and (max-width:765px) {
-            font-size: 1rem;
-        }
-         font-size: 1.1rem;
-         &::after{
-             content: ",";
-             padding-right: .2rem;
-             font-size: 1rem;
-         }
-     }
+    font-size: 1.3rem;
  }
 
  &__btn{

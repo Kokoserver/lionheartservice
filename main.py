@@ -114,8 +114,10 @@ async def contact(request:Request):
     form  = await request.form()
     name = form.get("name")
     email = form.get("email")
+    phone = form.get("phone")
     message = form.get("message")
-    new_contact = Contact(name, email, message)
+
+    new_contact = Contact(name, email, phone, message)
     new_contact.save()
     return template("pages/index.html", { "request":request, "status":"success", 
     "message":f"Thanks for contacting us {name}"})

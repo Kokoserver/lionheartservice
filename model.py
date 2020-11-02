@@ -61,16 +61,19 @@ class LionheartUser(object):
 class LionheartContact(object):
     Database.inittailize()
     COLLECTION = "contact"
-    def __init__(self, name:str, email:str, message:str):
+    def __init__(self, name:str, email:str, message:str, phone:str):
         self.name = name
         self.email = email
+        self.phone = phone
         self.message = message
+
 
     def json(self):
         return {
             "_id":uuid4().hex,
             "name":self.name,
             "email":self.email,
+            "phone":self.phone,
             "message":self.message
             
         }

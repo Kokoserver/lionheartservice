@@ -117,6 +117,12 @@ a {
   transition: all 5s;
 }
 
+@media screen and (max-width: 765px) {
+  #alert {
+    text-align: center;
+  }
+}
+
 #alert .alert-success {
   display: flex;
   justify-content: center;
@@ -143,6 +149,12 @@ a {
   padding: 0 2rem;
   color: #f4f4f4;
   text-align: center;
+}
+
+@media screen and (max-width: 765px) {
+  #alert .alert-danger {
+    text-align: center;
+  }
 }
 
 .fadeout {
@@ -612,27 +624,7 @@ a {
 }
 
 .service__list {
-  list-style-type: circle;
-  display: inline-block;
-  padding-top: 0;
-}
-
-.service__list li {
-  text-align: left;
-  display: inline-block;
-  font-size: 1.1rem;
-}
-
-@media screen and (max-width: 765px) {
-  .service__list li {
-    font-size: 1rem;
-  }
-}
-
-.service__list li::after {
-  content: ",";
-  padding-right: .2rem;
-  font-size: 1rem;
+  font-size: 1.3rem;
 }
 
 .service__btn {

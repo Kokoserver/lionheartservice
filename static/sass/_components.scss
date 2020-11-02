@@ -72,6 +72,9 @@
 #alert{
  display: block;
  transition: all 5s;
+ @media screen and (max-width:765px) {
+     text-align: center;
+ }
 .alert-success{
     display: flex;
     justify-content: center;
@@ -93,6 +96,9 @@
 
 
 .alert-danger{
+    @media screen and (max-width:765px) {
+        text-align: center;
+    }
     display: flex;
     justify-content: center;
     width:  100%;
