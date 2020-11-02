@@ -228,8 +228,9 @@
  }
  &__content{
      text-align: center;
-    //  padding: .1rem 2rem;
+     padding: .1rem 2rem;
      font-size: 1.3rem;
+     text-transform: capitalize;
         @media screen and (max-width:765px) {
             font-size: 1rem;
         }

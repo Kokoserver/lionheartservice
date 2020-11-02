@@ -195,7 +195,23 @@
             font-weight: 300;
 
         }
+        margin-bottom: 0;
+
 
         
     }
+}
+
+.creator{
+   color: $white;
+   font-size: 1.3rem;
+   padding-bottom: 2rem;
+   span{
+       color: $primary-color;
+       text-align: center;
+       &:last-child{
+           padding-top: 1rem;
+       }
+   }
+
 }
