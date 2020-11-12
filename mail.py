@@ -6,8 +6,7 @@ def sendmail(UserEmail:str, username:str, category:str, conact_message=None):
         smtp.starttls()
         smtp.ehlo()
         smtp.login(EMAIL, PASSWORD)
-       
-        if category == "register":
+        if category == "register": 
             subject = "Complete Registeration"
             body = f"""
             Congratulation {username} you have sucessfully registered to Lionheart service.
@@ -15,6 +14,7 @@ def sendmail(UserEmail:str, username:str, category:str, conact_message=None):
             please don't hesitate to contact us on our main website.
             """
             message = f"Subject: {subject}\n\n{body}"
+            smtp.login(EMAIL, PASSWORD)
             smtp.sendmail(EMAIL, UserEmail, message)
         elif category == "contact":
             subject = "lionheart service reply"
@@ -27,7 +27,7 @@ def sendmail(UserEmail:str, username:str, category:str, conact_message=None):
             smtp.sendmail(EMAIL, UserEmail, message)
             admin_subject = "New message from Customer"
             message = f"Subject: {admin_subject}\n\n{conact_message}"
-            smtp.sendmail(EMAIL, EMAIL, message)
+            smtp.sendmail(EMAIL, "lionhearteempire78@gmail.com", message)
            
             
        
