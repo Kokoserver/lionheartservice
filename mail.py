@@ -1,7 +1,7 @@
 import smtplib
 from settings import EMAIL, PASSWORD
 def sendmail(UserEmail:str, username:str, category:str, conact_message=None):
-    with smtplib.SMTP_SSL("smtp.gmail.com", 587) as smtp:
+    with smtplib.SMTP("smtp.gmail.com", 587) as smtp:
         smtp.ehlo()
         smtp.starttls()
         smtp.ehlo()
