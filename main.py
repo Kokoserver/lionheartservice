@@ -2,10 +2,10 @@ from starlette.requests import Request
 from starlette.responses import PlainTextResponse, HTMLResponse, RedirectResponse
 from starlette.background import BackgroundTask
 from config import template
+from mail import sendmail
 from model import LionheartUser as User
 from model import LionheartContact as Contact
 from model import LionheartAdmin as Admin
-from config import sendmail
 
 CATEGORY:list = [
     "Category",
@@ -53,8 +53,8 @@ async def register(request:Request):
     new_user = User(firstname, lastname, email, category, phone, address)
     new_user.save()
     username = f"{firstname} {lastname}"
-    BackgroundTask(sendmail, email=email, username=username, category=category)
-    return RedirectResponse(url="/homeresponse/23478638726", status_code=301)
+    task = BackgroundTask(sendmail, UserEmail=email, username=username, category="register", conact_message=None )
+    return RedirectResponse(url="/homeresponse/23478638726", status_code=301, background=task)
 
 async def adminTemplate(request:Request):
     return template("pages/admin.html", {"request":request})
@@ -116,10 +116,12 @@ async def contact(request:Request):
     email = form.get("email")
     phone = form.get("phone")
     message = form.get("message")
-
     new_contact = Contact(name, email, phone, message)
-    new_contact.save()
+    newContact = new_contact.save()
+    contact = f"name:{name}\n\n email:{email}\n\nphone:{phone}\n\n:message:{message}"
+    subject = "New contact message"
+    task = BackgroundTask(sendmail, UserEmail=email, username=name, category="contact",conact_message=contact )
     return template("pages/index.html", { "request":request, "status":"success", 
-    "message":f"Thanks for contacting us {name}"})
+    "message":f"Thanks for contacting us {name}"}, background=task)
     
 
