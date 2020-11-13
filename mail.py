@@ -11,7 +11,6 @@ def sendmail(UserEmail:str, username:str, category:str, conact_message=None):
             please don't hesitate to contact us on our main website.
             """
             message = f"Subject: {subject}\n\n{body}"
-            smtp.login(EMAIL, PASSWORD)
             smtp.sendmail(EMAIL, UserEmail, message)
         elif category == "contact":
             subject = "lionheart service reply"
