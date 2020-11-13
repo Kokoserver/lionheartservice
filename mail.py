@@ -2,7 +2,7 @@ import smtplib
 from settings import EMAIL, PASSWORD
 def sendmail(UserEmail:str, username:str, category:str, conact_message=None):
     with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
-        smtp.login("lionhearteempire78@gmail.com", "manchester500")
+        smtp.login(EMAIL, PASSWORD)
         if category == "register": 
             subject = "Complete Registeration"
             body = f"""
