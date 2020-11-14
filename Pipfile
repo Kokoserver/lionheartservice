@@ -12,6 +12,7 @@ uvicorn = "*"
 aiohttp = "*"
 pymongo = {extras = ["srv"], version = "*"}
 gunicorn = "*"
+python-dotenv = "*"
 
 [requires]
 python_version = "3.8"
