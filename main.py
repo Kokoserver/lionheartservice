@@ -53,7 +53,7 @@ async def register(request:Request):
     new_user = User(firstname, lastname, email, category, phone, address)
     new_user.save()
     username = f"{firstname} {lastname}"
-    sendmail(UserEmail=email, username=username, category="register",conact_message=contact)
+    task = BackgroundTask(sendmail,UserEmail=email, username=username, category="register",conact_message=contact)
     return RedirectResponse(url="/homeresponse/23478638726", status_code=301, background=task)
 
 async def adminTemplate(request:Request):
@@ -120,8 +120,9 @@ async def contact(request:Request):
     newContact = new_contact.save()
     contact = f"name:{name}\n\n email:{email}\n\nphone:{phone}\n\n:message:{message}"
     subject = "New contact message"
-    sendmail(UserEmail=email, username=name, category="contact", conact_message=contact)
+
+    task = BackgroundTask(sendmail, UserEmail=email, username=name, category="contact", conact_message=contact)
     return template("pages/index.html", { "request":request, "status":"success", 
-    "message":f"Thanks for contacting us {name}"})
+    "message":f"Thanks for contacting us {name}"}, background=task)
     
 
