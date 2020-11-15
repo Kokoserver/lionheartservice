@@ -72,14 +72,16 @@
 #alert{
  display: block;
  transition: all 5s;
+ text-align: center;
  @media screen and (max-width:765px) {
-     text-align: center;
+     text-align: left;
  }
 .alert-success{
     display: flex;
     justify-content: center;
     width:  100%;
     margin: 2rem auto;
+    align-items: center;
     position: fixed;
     top: 3rem;
     z-index: 9999;
@@ -96,11 +98,13 @@
 
 
 .alert-danger{
+    
     @media screen and (max-width:765px) {
         text-align: center;
     }
     display: flex;
     justify-content: center;
+    align-items: center;
     width:  100%;
     margin: 2rem auto;
     position: fixed;

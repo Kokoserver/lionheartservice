@@ -62,6 +62,9 @@ async def register(request:Request):
     return template("pages/index.html", context=context , background=task)
 
 async def adminTemplate(request:Request):
+    user = request.session.get('loginlionheart', None)
+    if user:
+       return RedirectResponse(url="/dashboard", status_code=303)
     return template("pages/admin.html", {"request":request})
 
 
@@ -72,7 +75,7 @@ async def admin(request:Request):
     user = Admin.find(email=email, password=password)
     if user:
        request.session['loginlionheart'] = user["_id"]
-       return RedirectResponse("/dashboard", status_code=303)
+       return RedirectResponse(url="/dashboard", status_code=303)
     return template("pages/admin.html", {"request":request, "email":email, 
     "password":password,"status":"error", "message":"account does not exist"}) 
     
@@ -80,8 +83,7 @@ async def admin(request:Request):
 async def logout(request:Request):
     request.session.clear()
     return RedirectResponse(url="/", status_code=303)
-    # return template("pages/admin.html", { "request":request, "status":"success",
-    #  "message":"you have successfully logged out"})
+
 
 async def adminReg(request:Request):
     form = await request.form()
