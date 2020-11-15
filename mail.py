@@ -1,5 +1,8 @@
 import smtplib
-from settings import EMAIL, PASSWORD
+from starlette.config import Config
+config = Config(".env")
+EMAIL = config("EMAIL_ADDRESS", default=None)
+PASSWORD = config("EMAIL_PASSWORD", default=None)
 def sendmail(UserEmail:str, username:str, category:str, conact_message=None):
     with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
         smtp.login(EMAIL, PASSWORD)
@@ -23,7 +26,7 @@ def sendmail(UserEmail:str, username:str, category:str, conact_message=None):
             smtp.sendmail(EMAIL, UserEmail, message)
             admin_subject = "New message from Customer"
             message = f"Subject: {admin_subject}\n\n{conact_message}"
-            smtp.sendmail(EMAIL, "lionhearteempire78@gmail.com", message)
+            smtp.sendmail(EMAIL, EMAIL, message)
            
             
        
