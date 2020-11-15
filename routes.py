@@ -4,7 +4,6 @@ from main import (registerTemplate,
 register, contact, adminTemplate, 
 dashboard, 
 logout,
-homeResponse,
 admin, delete,
 adminReg, adminRegTemplate)
 
@@ -17,7 +16,7 @@ routes = [
     Route("/admin/login", admin,  methods=['post']),
     Route("/dashboard", dashboard, methods=['get'] ),
     Route("/deleteUser", delete, methods=['post']),
-    Route("/homeresponse/23478638726", homeResponse, methods=["get"] ),
+    # Route("/homeresponse/23478638726", homeResponse, methods=["get"] ),
     Route("/admin/register/main/raqueeb", adminReg, methods=['post'] ),
     Route("/admin/register/main/raqueeb", adminRegTemplate, methods=['get']),
 

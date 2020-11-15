@@ -22,13 +22,13 @@ async def home(request:Request):
     return template("pages/index.html", {"request":request})
 
 
-async def homeResponse(request):
-    context = {
-        "request":request,
-        "status":"success",
-        "message":" Congratulations, you have successfully register to Lionheart."
-    }
-    return template("pages/index.html", context=context )
+# async def homeResponse(request):
+#     context = {
+#         "request":request,
+#         "status":"success",
+#         "message":" Congratulations, you have successfully register to Lionheart."
+#     }
+#     return template("pages/index.html", context=context )
 
 async def registerTemplate(request:Request):
     return template("pages/register.html", {"request":request, "categories":CATEGORY})
@@ -54,7 +54,12 @@ async def register(request:Request):
     new_user.save()
     username = f"{firstname} {lastname}"
     task = BackgroundTask(sendmail,UserEmail=email, username=username, category="register",conact_message=contact)
-    return RedirectResponse(url="/homeresponse/23478638726", status_code=301, background=task)
+    context = {
+        "request":request,
+        "status":"success",
+        "message":f" Congratulations {firstname} , you have successfully register to Lionheart."
+    }
+    return template("pages/index.html", context=context , background=task)
 
 async def adminTemplate(request:Request):
     return template("pages/admin.html", {"request":request})
@@ -67,14 +72,14 @@ async def admin(request:Request):
     user = Admin.find(email=email, password=password)
     if user:
        request.session['loginlionheart'] = user["_id"]
-       return RedirectResponse("/dashboard", status_code=301)
+       return RedirectResponse("/dashboard", status_code=303)
     return template("pages/admin.html", {"request":request, "email":email, 
     "password":password,"status":"error", "message":"account does not exist"}) 
     
 
 async def logout(request:Request):
     request.session.clear()
-    return RedirectResponse(url="/", status_code=301)
+    return RedirectResponse(url="/", status_code=303)
     # return template("pages/admin.html", { "request":request, "status":"success",
     #  "message":"you have successfully logged out"})
 
@@ -98,7 +103,7 @@ async def delete(request:Request):
     form = await request.form()
     userId = form.get("userId")
     user = User.delete({"_id":userId})
-    return RedirectResponse(url="/dashboard", status_code=301)
+    return RedirectResponse(url="/dashboard", status_code=303)
     return template("pages/admin.html", {"request":request})  
    
 
@@ -106,7 +111,7 @@ async def dashboard(request:Request):
     user = request.session.get('loginlionheart', None)
     if user is not None:
         return template("pages/dashboard.html", { "request":request, "user":User.all({})})
-    return RedirectResponse(url="/admin")
+    return RedirectResponse(url="/admin", status_code=303)
         
 
 
