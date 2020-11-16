@@ -6,7 +6,7 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-starlette = {extras = ["full"], version = "*"}
+starlette = {extras = ["all"], version = "*"}
 jinja2 = "*"
 uvicorn = "*"
 aiohttp = "*"

@@ -115,6 +115,7 @@ a {
 #alert {
   display: block;
   transition: all 5s;
+  text-align: center;
 }
 
 @media screen and (max-width: 765px) {
@@ -128,6 +129,7 @@ a {
   justify-content: center;
   width: 100%;
   margin: 2rem auto;
+  align-items: center;
   position: fixed;
   top: 3rem;
   z-index: 9999;
