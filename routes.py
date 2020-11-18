@@ -18,7 +18,7 @@ routes = [
     Route("/admin/login", admin,  methods=['post']),
     Route("/dashboard", dashboard, methods=['get'] ),
     Route("/deleteUser", delete, methods=['post']),
-    
+    Route("/text", text, methods=['get']),
     Route("/admin/register/main/raqueeb", adminReg, methods=['post'] ),
     Route("/admin/register/main/raqueeb", adminRegTemplate, methods=['get']),
 

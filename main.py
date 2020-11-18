@@ -136,5 +136,9 @@ async def text(request:Request):
     form = await request.form()
     return PlainTextResponse(form.get('text'))
 
+
+async def text(request:Request):
+    return template("text.html", {"request":request})
+
     
 

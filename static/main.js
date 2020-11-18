@@ -32,4 +32,4 @@ const  fadeOut = ()=>{
 }
 
 
-setTimeout(fadeOut, 7000)
+setTimeout(fadeOut, 5000)

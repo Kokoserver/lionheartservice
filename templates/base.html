@@ -11,8 +11,8 @@
 <body>
     {% include "layouts/header.html"%}
     <main id="main">
-        {% block content%}{%endblock%}
-        <i class='bx bx-hot'></i>
+       
+        <i class='bx bx-hot'></i> {% block content%}{%endblock%}
     </main>
     {%include "layouts/footer.html"%}
 <script src="{{url_for('static', path='/main.js')}}"></script>
