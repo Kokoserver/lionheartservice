@@ -7,7 +7,12 @@ verify_ssl = true
 
 [packages]
 starlette = {extras = ["full"], version = "*"}
-pymongo = "*"
+pymongo = {extras = ["srv"], version = "*"}
+uvicorn = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.8"
+
+[scripts]
+server = "python run.py"
