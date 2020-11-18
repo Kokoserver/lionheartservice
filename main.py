@@ -132,4 +132,9 @@ async def contact(request:Request):
     return template("pages/index.html", { "request":request, "status":"success", 
     "message":f"Thanks for contacting us {name}"}, background=task)
     
+async def text(request:Request):
+    form = await request.form()
+    return PlainTextResponse(form.get('text'))
+
+    
 

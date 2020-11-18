@@ -13,18 +13,18 @@ const showMenu = ()=>{
     return
 }
 
-// const HideMenu = ()=>{
-//     let main = document.querySelector("#main")
-//     let navMenu = document.querySelector(".nav__menu")
-//     main.addEventListener("click", (e)=>{
-//         e.preventDefault()
-//         navMenu.classList.remove('show')
+const HideMenu = ()=>{
+    let main = document.querySelector("#main")
+    let navMenu = document.querySelector(".nav__menu")
+    main.addEventListener("click", (e)=>{
+        e.preventDefault()
+        navMenu.classList.remove('show')
 
-//     })
-// }
+    })
+}
 
 showMenu()
-// HideMenu()
+HideMenu()
 
 
 const  fadeOut = ()=>{
@@ -32,4 +32,4 @@ const  fadeOut = ()=>{
 }
 
 
-setTimeout(fadeOut, 5000)
+setTimeout(fadeOut, 7000)
