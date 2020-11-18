@@ -3,8 +3,8 @@ const showMenu = ()=>{
     let toggler = document.querySelector('#toggler')
 
     if(navMenu && toggler){
-    toggler.addEventListener("click", (e)=>{
-        e.preventDefault()
+    toggler.addEventListener("click", ()=>{
+        
         navMenu.classList.toggle('show')
     })
 
@@ -16,8 +16,8 @@ const showMenu = ()=>{
 const HideMenu = ()=>{
     let main = document.querySelector("#main")
     let navMenu = document.querySelector(".nav__menu")
-    main.addEventListener("click", (e)=>{
-        e.preventDefault()
+    main.addEventListener("click", ()=>{
+       
         navMenu.classList.remove('show')
 
     })
