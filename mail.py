@@ -7,10 +7,18 @@ def sendmail(UserEmail:str, username:str, category:str, conact_message=None):
     with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
         smtp.login(EMAIL, PASSWORD)
         if category == "register": 
+            subject2 = "New registered member"
+            body2 = f"""
+            {username} have successfully registered to lionheartservice,
+             you can check you dashboard https://lionheartservice.herokuapp.com/dashboard, 
+             To see the update.
+            """
+            message2 = f"Subject: {subject2}\n\n{body2}"
+            smtp.sendmail(EMAIL, EMAIL, message2)
             subject = "Complete Registeration"
             body = f"""
             Congratulation {username} you have sucessfully registered to Lionheart service.
-            We will keep updating you as soon as possible an if you have any questions?
+            We will keep updating you as soon as possible and if you have any questions?
             please don't hesitate to contact us on our main website.
             """
             message = f"Subject: {subject}\n\n{body}"
